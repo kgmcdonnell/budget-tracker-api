@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2023-07-06
+  description: MyText
+  category_id: 1
+  amount: 1
+  income: false
+  expense: false
+
+two:
+  date: 2023-07-06
+  description: MyText
+  category_id: 1
+  amount: 1
+  income: false
+  expense: false
