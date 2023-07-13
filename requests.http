@@ -22,6 +22,10 @@ Content-Type: application/json
 "amount":1600
 }
 
+### Delete Budget
+DELETE http://localhost:3000/budgets/1.json
+Content-Type: application/json
+
 ### Transactions Index
 GET http://localhost:3000/transactions.json
 
@@ -50,3 +54,6 @@ Content-Type: application/json
 "amount":223
 }
 
+### Delete Transaction
+DELETE http://localhost:3000/transactions/1.json
+Content-Type: application/json

@@ -48,4 +48,10 @@ class TransactionsController < ApplicationController
       render json: { error: @transaction.error.full_messages }, status: 422
     end
   end
+
+  def destroy
+    @transaction = Transaction.find_by(id: params[:id])
+    @transaction.destroy
+    render json: { message: "sucessfully deleted transaction" }
+  end
 end

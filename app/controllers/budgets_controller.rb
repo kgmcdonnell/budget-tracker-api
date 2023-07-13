@@ -40,4 +40,10 @@ class BudgetsController < ApplicationController
       render json: { error: @budget.errors.full_messages }, status: 422
     end
   end
+
+  def destroy
+    @budget = Budget.find_by(id: params[:id])
+    @budget.destroy
+    render json: { message: "sucessfully deleted transaction" }
+  end
 end
