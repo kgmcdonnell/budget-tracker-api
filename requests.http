@@ -19,3 +19,17 @@ GET http://localhost:3000/transactions.json
 
 ### Transactions Show
 GET http://localhost:3000/transactions/3.json
+
+### Transactions Create
+POST http://localhost:3000/transactions.json
+Content-Type: application/json
+
+{
+  "date":20230710,
+  "description":"coffee date",
+  "category_id":13,
+  "amount":10.01,
+  "income":false,
+  "expense":true,
+  "user_id":3
+}
