@@ -2,4 +2,10 @@
 GET http://localhost:3000/budgets.json
 
 ### Budgets Show
-GET http://localhost:3000/budgets/2.json
+GET http://localhost:3000/budgets/3.json
+
+### Transactions Index
+GET http://localhost:3000/transactions.json
+
+### Transactions Show
+GET http://localhost:3000/transactions/3.json

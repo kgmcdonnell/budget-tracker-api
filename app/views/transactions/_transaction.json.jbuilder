@@ -1,5 +1,6 @@
 json.id transaction.id
 json.amount transaction.amount
+json.description transaction.description
 json.date transaction.date
 json.category transaction.category
 json.income transaction.income
