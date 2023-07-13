@@ -31,4 +31,21 @@ class TransactionsController < ApplicationController
       render json: { error: @transaction.error.full_messages }, status: 422
     end
   end
+
+  def update
+    @transaction = Transaction.find_by(id: params[:id])
+    @transaction.update(
+      date: params[:date] || @transaction.date,
+      description: params[:description] || @transaction.description,
+      category_id: params[:category_id] || @transaction.category_id,
+      amount: params[:amount] || @transaction.amount,
+      income: params[:income] || @transaction.income,
+      expense: params[:expense] || @transaction.expense,
+    )
+    if @transaction.valid?
+      render template: "transactions/show"
+    else
+      render json: { error: @transaction.error.full_messages }, status: 422
+    end
+  end
 end

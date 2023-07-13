@@ -2,7 +2,7 @@
 GET http://localhost:3000/budgets.json
 
 ### Budgets Show
-GET http://localhost:3000/budgets/3.json
+GET http://localhost:3000/budgets/2.json
 
 ### Budgets Create
 POST http://localhost:3000/budgets.json
@@ -14,11 +14,19 @@ Content-Type: application/json
   "user_id":2
 }
 
+### Budgets Update
+PATCH http://localhost:3000/budgets/3.json
+Content-Type: application/json
+
+{
+"amount":1600
+}
+
 ### Transactions Index
 GET http://localhost:3000/transactions.json
 
 ### Transactions Show
-GET http://localhost:3000/transactions/3.json
+GET http://localhost:3000/transactions/1.json
 
 ### Transactions Create
 POST http://localhost:3000/transactions.json
@@ -33,3 +41,12 @@ Content-Type: application/json
   "expense":true,
   "user_id":3
 }
+
+### Transactions Update
+PATCH http://localhost:3000/transactions/1.json
+Content-Type: application/json
+
+{
+"amount":223
+}
+

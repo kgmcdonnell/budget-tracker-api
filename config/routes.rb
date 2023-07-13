@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   get "/budgets" => "budgets#index"
   get "/budgets/:id" => "budgets#show"
   post "/budgets" => "budgets#create"
+  patch "/budgets/:id" => "budgets#update"
   # Transactions Routes
   get "/transactions" => "transactions#index"
   get "/transactions/:id" => "transactions#show"
   post "/transactions" => "transactions#create"
+  patch "/transactions/:id" => "transactions#update"
 end
