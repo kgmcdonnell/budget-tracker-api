@@ -4,6 +4,16 @@ GET http://localhost:3000/budgets.json
 ### Budgets Show
 GET http://localhost:3000/budgets/3.json
 
+### Budgets Create
+POST http://localhost:3000/budgets.json
+Content-Type: application/json
+
+{
+  "category_id":"1",
+  "amount":50,
+  "user_id":2
+}
+
 ### Transactions Index
 GET http://localhost:3000/transactions.json
 

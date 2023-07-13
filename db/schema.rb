@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_184118) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_13_155635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "budgets", force: :cascade do |t|
-    t.string "category_id"
+    t.integer "category_id"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_184118) do
     t.date "date"
     t.text "description"
     t.integer "category_id"
-    t.integer "amount"
+    t.decimal "amount"
     t.boolean "income"
     t.boolean "expense"
     t.datetime "created_at", null: false
