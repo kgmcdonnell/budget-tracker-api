@@ -2,22 +2,25 @@
 
 ### Budgets Index
 GET http://localhost:3000/budgets.json
+Authorization: Bearer {{jwt}}
 
 ### Budgets Show
 GET http://localhost:3000/budgets/2.json
+Authorization: Bearer {{jwt}}
 
 ### Budgets Create
 POST http://localhost:3000/budgets.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "category_id":"1",
-  "amount":50,
-  "user_id":2
+  "category_id":"10",
+  "amount":1000
 }
 
 ### Budgets Update
 PATCH http://localhost:3000/budgets/3.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -26,38 +29,43 @@ Content-Type: application/json
 
 ### Delete Budget
 DELETE http://localhost:3000/budgets/1.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Transactions Index
 GET http://localhost:3000/transactions.json
+Authorization: Bearer {{jwt}}
 
 ### Transactions Show
-GET http://localhost:3000/transactions/1.json
+GET http://localhost:3000/transactions/4.json
+Authorization: Bearer {{jwt}}
 
 ### Transactions Create
 POST http://localhost:3000/transactions.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "date":20230710,
-  "description":"coffee date",
-  "category_id":13,
-  "amount":10.01,
+  "date":20230716,
+  "description":"test",
+  "category_id":18,
+  "amount":22,
   "income":false,
-  "expense":true,
-  "user_id":3
+  "expense":true
 }
 
 ### Transactions Update
-PATCH http://localhost:3000/transactions/1.json
+PATCH http://localhost:3000/transactions/4.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-"amount":223
+"amount":25
 }
 
 ### Delete Transaction
-DELETE http://localhost:3000/transactions/1.json
+DELETE http://localhost:3000/transactions/4.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### User Sign-Up
