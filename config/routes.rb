@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   post "/transactions" => "transactions#create"
   patch "/transactions/:id" => "transactions#update"
   delete "/transactions/:id" => "transactions#destroy"
+  # User Routes
+  post "/users" "user#create"
 end
