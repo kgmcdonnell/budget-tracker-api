@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   patch "/transactions/:id" => "transactions#update"
   delete "/transactions/:id" => "transactions#destroy"
   # User Routes
-  post "/users" "user#create"
+  post "/users" => "users#create"
+  # Session Routes
+  post "/sessions" => "sessions#create"
 end

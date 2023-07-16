@@ -5,6 +5,9 @@ ruby "3.1.3"
 
 gem 'rack-cors'
 
+# Creates JSON web tokens
+gem 'jwt'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.6"
 
