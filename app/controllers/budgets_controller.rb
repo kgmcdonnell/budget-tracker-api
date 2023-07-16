@@ -1,13 +1,13 @@
 class BudgetsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user
 
   def index
-    @budgets = Budget.all
+    @budgets = current_user.budgets
     render template: "budgets/index"
   end
 
   def show
-    @budget = Budget.find_by(id: params[:id])
+    @budget = current_user.budgets.find_by(id: params[:id])
     if @budget
       render template: "budgets/show"
     else
@@ -19,7 +19,7 @@ class BudgetsController < ApplicationController
     @budget = Budget.new(
       category_id: params[:category_id],
       amount: params[:amount],
-      user_id: params[:user_id],
+      user_id: current_user.id,
     )
     if @budget.save
       render template: "budgets/show"
@@ -29,7 +29,7 @@ class BudgetsController < ApplicationController
   end
 
   def update
-    @budget = Budget.find_by(id: params[:id])
+    @budget = current_user.budgets.find_by(id: params[:id])
     @budget.update(
       category_id: params[:category_id] || @budget.category_id,
       amount: params[:amount] || @budget.amount,
@@ -42,7 +42,7 @@ class BudgetsController < ApplicationController
   end
 
   def destroy
-    @budget = Budget.find_by(id: params[:id])
+    @budget = current_user.budgets.find_by(id: params[:id])
     @budget.destroy
     render json: { message: "sucessfully deleted transaction" }
   end

@@ -1,13 +1,13 @@
 class TransactionsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user
 
   def index
-    @transactions = Transaction.all
+    @transactions = current_user.transactions.all
     render template: "transactions/index"
   end
 
   def show
-    @transaction = Transaction.find_by(id: params[:id])
+    @transaction = current_user.transactions.find_by(id: params[:id])
     if @transaction
       render template: "transactions/show"
     else
@@ -23,7 +23,7 @@ class TransactionsController < ApplicationController
       amount: params[:amount],
       income: params[:income],
       expense: params[:expense],
-      user_id: params[:user_id],
+      user_id: current_user.id,
     )
     if @transaction.save
       render template: "transactions/show"
@@ -33,7 +33,7 @@ class TransactionsController < ApplicationController
   end
 
   def update
-    @transaction = Transaction.find_by(id: params[:id])
+    @transaction = current_user.transactions.find_by(id: params[:id])
     @transaction.update(
       date: params[:date] || @transaction.date,
       description: params[:description] || @transaction.description,
@@ -50,7 +50,7 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
-    @transaction = Transaction.find_by(id: params[:id])
+    @transaction = current_user.transactions.find_by(id: params[:id])
     @transaction.destroy
     render json: { message: "sucessfully deleted transaction" }
   end
