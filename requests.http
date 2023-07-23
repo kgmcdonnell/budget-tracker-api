@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2ODk1OTczMDd9.ri0ljcVtDH8z05WoJTibBr_XVvcoBsVDsdNo6ssOg4E
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2ODk2ODU3NjZ9.xi3J8Qis-FAub2ROB1YzCqrH7ltb37p8MkOMqfwThlo
 
 ### Budgets Index
 GET http://localhost:3000/budgets.json
